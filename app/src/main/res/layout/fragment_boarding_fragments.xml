@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:showImage="@{@drawable/view_pager_background}">
+
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slideViewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_above="@+id/dotsLayout"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintBottom_toTopOf="@+id/dotsLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/dotsLayout"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnNext"
+            app:layout_constraintStart_toEndOf="@+id/btnBefore"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewPager">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBefore"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/back"
+            android:clickable="true"
+            style="@style/OnBoardingTextStyle"
+            android:drawableLeft="@drawable/ic_arrow_back"
+            android:drawablePadding="0.3dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_rounded"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_rounded"
+            android:clickable="true"
+            android:text="@string/next"
+            android:drawableRight="@drawable/ic_arrow_forward"
+            android:drawablePadding="0.3dp"
+            style="@style/OnBoardingTextStyle"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/btnBefore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnBefore"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

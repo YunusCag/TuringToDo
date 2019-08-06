@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--WelcomeActivity Theme colors -->
+    <color name="colorPrimary">#262938</color>
+    <color name="colorPrimaryDark">#181A24</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparentWhite">#cccccc</color>
+    <!--HomeActivityColor -->
+    <color name="colorPrimaryHome">#2196F3</color>
+    <color name="colorPrimaryDarkHome">#1976D2</color>
+    <color name="colorAccentHome">#FFFF00</color>
+</resources>
