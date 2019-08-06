@@ -32,7 +32,6 @@ public class WelcomeActivity extends AppCompatActivity {
         boolean firstTime= TuringApp.readSharedFirstTime(this);
         if(firstTime){
             showOnBoardingFragment();
-            TuringApp.writeSharedFirstTime(this,false);
         }else {
             showSplashScreenFragment(SPLASH_TIME_OUT);
         }
@@ -51,6 +50,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Thread.sleep(duration);
+                    TuringApp.writeSharedFirstTime(WelcomeActivity.this,false);
                     Intent intent=new Intent(WelcomeActivity.this,HomeActivity.class);
                     startActivity(intent);
 
