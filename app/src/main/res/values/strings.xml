@@ -1,19 +1,19 @@
 <resources>
-    <string name="app_name">TuringToDo</string>
-    <string name="back">Back</string>
-    <string name="next">Next</string>
-    <string-array name="onBoardingPagerTitle">
+    <string content="app_name">TuringToDo</string>
+    <string content="back">Back</string>
+    <string content="next">Next</string>
+    <string-array content="onBoardingPagerTitle">
         <item>Lets Start</item>
         <item>Add New Task</item>
         <item>Note for Reviewers</item>
     </string-array>
-    <string-array name="onBoardingPagerDescription">
+    <string-array content="onBoardingPagerDescription">
         <item>Turing ToDo is a beautifully simple,free todo list,task list and reminder app that will help keep your busy life organised everday</item>
         <item>Tasks is a simple to do list application that emphasizes simplicity and ease of use. Tasks are built for you if you want to have a shopping list, grocery list or just a lot of things to remember</item>
         <item>If you have a feature that you want, or if you encounter a problem to resolve, please email me and we will be happy to help</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string content="hello_blank_fragment">Hello blank fragment</string>
+    <string content="title_activity_home">HomeActivity</string>
 </resources>

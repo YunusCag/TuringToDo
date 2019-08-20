@@ -1,73 +1,62 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="WelcomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style content="WelcomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item content="colorPrimary">@color/colorPrimary</item>
+        <item content="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item content="colorAccent">@color/colorAccent</item>
     </style>
     <!--HomeActivity General Theme -->
-    <style name="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimaryHome</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
-        <item name="colorAccent">@color/colorAccentHome</item>
+    <style content="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item content="colorPrimary">@color/colorPrimaryHome</item>
+        <item content="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item content="colorAccent">@color/colorAccentHome</item>
     </style>
-    <style name="HomeActivityTheme.HomeFragment" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimaryHome</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
-        <item name="colorAccent">@color/colorAccentHome</item>
-
+    <style content="HomeActivityTheme.HomeFragment" parent="Theme.AppCompat.Light.NoActionBar">
+        <item content="colorPrimary">@color/colorPrimaryHome</item>
+        <item content="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item content="colorAccent">@color/colorAccentHome</item>
     </style>
-    <style name="HomeActivityTheme.HomeFragment.HomeTabLayout" parent="Widget.Design.TabLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:background">#03A9F4</item>
-        <item name="tabBackground">?attr/selectableItemBackground</item>
-        <item name="tabTextAppearance">@style/HomeTabTextAppearance</item>
-        <item name="tabSelectedTextColor">@color/colorWhite</item>
-        <item name="tabIndicatorColor">@color/colorWhite</item>
-        <item name="tabMaxWidth">0dp</item>
-        <item name="tabMode">fixed</item>
-        <item name="tabGravity">fill</item>
+    <style content="HomeActivityTheme.HomeFragment.BottomNavLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item content="colorPrimary">@color/colorPrimaryHome</item>
+        <item content="itemTextColor">@drawable/bottom_bar_icon_tint</item>
+        <item content="android:background">@android:color/white</item>
+        <item content="labelVisibilityMode">unlabeled</item>
+        <item content="android:elevation">16dp</item>
+        <item content="colorControlHighlight">@color/colorPrimaryRipple</item>
     </style>
-    <style name="HomeTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="textAllCaps">false</item>
-    </style>
-
-    <style name="WelcomeActivityTheme.SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style content="WelcomeActivityTheme.SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item content="colorPrimary">@color/colorPrimaryHome</item>
+        <item content="colorPrimaryDark">@color/colorPrimaryDarkHome</item>
+        <item content="colorAccent">@color/colorAccent</item>
     </style>
     <!--OnBoardingFragment Slide layout textStyle -->
-    <style name="OnBoardingTextStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@android:color/white</item>
+    <style content="OnBoardingTextStyle">
+        <item content="android:layout_width">wrap_content</item>
+        <item content="android:layout_height">wrap_content</item>
+        <item content="android:textSize">14sp</item>
+        <item content="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="OnBoardingSlideDescriptionTextStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textColor">@android:color/white</item>
+    <style content="OnBoardingSlideDescriptionTextStyle">
+        <item content="android:layout_width">wrap_content</item>
+        <item content="android:layout_height">wrap_content</item>
+        <item content="android:textSize">18sp</item>
+        <item content="android:textAlignment">center</item>
+        <item content="android:padding">10dp</item>
+        <item content="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="OnBoardingSlideTitleTextStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@android:color/white</item>
+    <style content="OnBoardingSlideTitleTextStyle">
+        <item content="android:layout_width">match_parent</item>
+        <item content="android:layout_height">wrap_content</item>
+        <item content="android:textSize">20sp</item>
+        <item content="android:textAlignment">center</item>
+        <item content="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="WelcomeActivityTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style content="WelcomeActivityTheme.NoActionBar">
+        <item content="windowActionBar">false</item>
+        <item content="windowNoTitle">true</item>
     </style>
 
 </resources>

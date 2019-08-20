@@ -3,14 +3,19 @@ package com.yunuscagliyan.turingtodo.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yunuscagliyan.turingtodo.R;
-import com.yunuscagliyan.turingtodo.adapters.HomeTabPagerAdapter;
 import com.yunuscagliyan.turingtodo.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -18,12 +23,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     FragmentHomeBinding homeBinding;
-    ArrayList<Fragment> listFragment;
-    ArrayList<String> listPageTitle;
-    HomeTabPagerAdapter tabPagerAdapter;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
 
     public HomeFragment() {
 
@@ -31,37 +36,54 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         homeBinding=FragmentHomeBinding.inflate(inflater);
+        drawerLayout=homeBinding.drawerLayout;
+        toolbar=homeBinding.homeToolbar;
         init();
-        setTaps();
-
-
 
 
         return homeBinding.getRoot();
     }
 
-    private void setTaps() {
-        homeBinding.tabLayout.getTabAt(0).setIcon(R.drawable.icon_home_rounded);
-        homeBinding.tabLayout.getTabAt(1).setIcon(R.drawable.icon_calendar_rounded);
-    }
+    public void init(){
+        homeBinding.bottomNav.setOnNavigationItemSelectedListener(this);
+        homeBinding.homeToolbar.setNavigationIcon(R.drawable.ic_menu);
 
-    private void init() {
-        listFragment=new ArrayList<>();
-        listPageTitle=new ArrayList<>();
+        toggle=new ActionBarDrawerToggle(getActivity(),drawerLayout,toolbar,R.string.back,R.string.back);
+        drawerLayout.addDrawerListener(toggle);
 
-        setFragments(new DashBoardFragment(),"Home");
-        setFragments(new CalendarFragment(),"Calendar");
-
-        tabPagerAdapter=new HomeTabPagerAdapter(getFragmentManager(),listFragment,listPageTitle);
-        homeBinding.homeViewPager.setAdapter(tabPagerAdapter);
-        homeBinding.tabLayout.setupWithViewPager(homeBinding.homeViewPager);
 
     }
 
-    public void setFragments(Fragment fragment,String title){
-        listPageTitle.add(title);
-        listFragment.add(fragment);
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Fragment fragment=null;
+        String fragmentTag="";
+        switch (menuItem.getItemId()){
+            case R.id.dashboard:
+                fragment=new DashBoardFragment();
+                fragmentTag="fragment_dashboard";
+                break;
+            case R.id.calendar:
+                fragment=new CalendarFragment();
+                fragmentTag="fragment_calendar";
+                break;
+            case R.id.setting:
+                fragment=new SettingFragment();
+                fragmentTag="fragment_setting";
+                break;
+                default:
+                    fragment=new DashBoardFragment();
+                    fragmentTag="fragment_dashboard";
+        }
+        if (fragment!=null){
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.homeContainer,fragment,fragmentTag)
+                    .commit();
+            return true;
+        }
 
+
+        return false;
     }
-
 }

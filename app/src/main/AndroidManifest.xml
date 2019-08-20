@@ -10,15 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/HomeActivityTheme.HomeFragment">
         <activity
-            android:name=".HomeActivity"
+            android:content=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/HomeActivityTheme"></activity>
-        <activity android:name=".WelcomeActivity"
+        <activity android:content=".WelcomeActivity"
             android:theme="@style/WelcomeActivityTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:content="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:content="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
